@@ -12,9 +12,6 @@ public class Professor extends Identificador {
         this.aulas = new LinkedList<>();
     }
 
-    public long getNumero() {
-        return numero;
-    }
 
     public LinkedList<Aula> getAulas() {
         return new LinkedList<Aula>(aulas);
@@ -35,9 +32,6 @@ public class Professor extends Identificador {
         this.numero = numero;
     }
 
-    public String getNome() {
-        return nome;
-    }
 
     public void preencherSumario(Aula aula) {
         if (!aulas.contains(aula)) {
