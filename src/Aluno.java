@@ -6,8 +6,8 @@ public class Aluno extends Identificador {
     private LinkedList<Aula> aulas;
 
     public Aluno(String nome, long numero) {
-        this.nome = nome;
-        this.numero = numero;
+        super.nome = nome;
+        super.numero = numero;
         this.aulas = new LinkedList<>();
     }
 
