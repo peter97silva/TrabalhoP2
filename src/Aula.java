@@ -9,16 +9,14 @@ public class Aula extends Identificador {
     private Horario horario;
 
     public Aula(String nome, int numero, Horario horario) {
-        this.nome = nome;
-        this.numero = numero;
+        super(nome, numero);
         this.horario = horario;
         this.alunos = new LinkedList<>();
         sumario = "";
     }
 
     public Aula(String nome, int numero, Horario horario, Professor professor, LinkedList<Aluno> alunos) {
-        this.nome = nome;
-        this.numero = numero;
+        super(nome,numero);
         this.professor = professor;
         this.alunos = alunos;
         this.horario = horario;

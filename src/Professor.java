@@ -8,8 +8,7 @@ public class Professor extends Identificador {
     private LinkedList<Aula> aulas;
 
     public Professor(String nome, long numero) {
-        this.nome = nome;
-        this.numero = numero;
+        super(nome, numero);
         this.aulas = new LinkedList<>();
     }
 
