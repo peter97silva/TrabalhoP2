@@ -8,8 +8,8 @@ public class Professor extends Identificador {
     private LinkedList<Aula> aulas;
 
     public Professor(String nome, long numero) {
-        this.nome = nome;
-        this.numero = numero;
+        super.nome = nome;
+        super.numero = numero;
         this.aulas = new LinkedList<>();
     }
 
@@ -34,10 +34,6 @@ public class Professor extends Identificador {
 
     public void setNumero(long numero) {
         this.numero = numero;
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     public void preencherSumario(Aula aula) {
