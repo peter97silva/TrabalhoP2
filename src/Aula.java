@@ -1,10 +1,8 @@
 import java.util.LinkedList;
 
-public class Aula {
+public class Aula extends Identificador {
 
 
-    private String nome;
-    private long numero;
     private String sumario;
     private Professor professor;
     private LinkedList<Aluno> alunos;
@@ -56,16 +54,8 @@ public class Aula {
         return sumario;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public long getNumero() {
-        return numero;
     }
 
     public void setNumero(long numero) {
