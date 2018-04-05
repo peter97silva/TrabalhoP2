@@ -1,8 +1,7 @@
 import java.util.LinkedList;
 
 public class Aluno extends Identificador {
-    private String nome;
-    private long numero;
+
     private LinkedList<Aula> aulas;
 
     public Aluno(String nome, long numero) {
