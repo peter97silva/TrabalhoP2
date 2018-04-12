@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Pessoa extends Identificador {
+public abstract class Pessoa extends Identificador {
     protected LinkedList<Aula> aulas;
 
     public Pessoa(String nome, long numero) {
@@ -27,20 +27,14 @@ public class Pessoa extends Identificador {
         this.numero = numero;
     }
 
-    public void preencherSumario(Aula aula) {
-        if (!aulas.contains(aula)) {
-            return;
-        }
-        aula.adicionarLinhaSumario(aula.getNome());
-        aula.adicionarLinhaSumario(String.valueOf(aula.getNumero()));
-        aula.adicionarLinhaSumario(nome);
-        for (Aluno aluno : aula.getAlunos()) {
-            aluno.preencherSumario(aula);
-        }
-    }
+    public abstract void preencherSumario(Aula aula) ;
+
 
     public void adicionar(Aula aula) {
-        if(aula == null )
+        if(aula == null || aulas.contains(aula)){
+            return;
+        }
+        aulas.add(aula);
     }
 
     public void remover(Aula aula) {

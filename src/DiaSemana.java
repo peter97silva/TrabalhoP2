@@ -1,5 +1,3 @@
-import com.sun.java.browser.plugin2.DOM;
-
 public enum DiaSemana {
     DOMINGO(0),
     SEGUNDA_FEIRA(1),

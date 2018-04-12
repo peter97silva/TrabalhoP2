@@ -7,5 +7,12 @@ public class Aluno extends Pessoa {
         super(nome, numero);
     }
 
-
+    @Override
+    public void preencherSumario(Aula aula) {
+        if (aulas.contains(aula)) {
+            aula.adicionarLinhaSumario(nome);
+        }else{
+            return;
+        }
+    }
 }

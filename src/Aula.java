@@ -44,8 +44,11 @@ public class Aula extends Identificador {
     }
 
     public void remover(Aluno aluno) {
+        if(aluno==null){
+            return;
+        }
         alunos.remove(aluno);
-        //alunos.indexOf(aluno);
+        aluno.remover(this);
     }
 
     public String getSumario() {
