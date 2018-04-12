@@ -7,16 +7,18 @@ public class Aula extends Identificador {
     private Professor professor;
     private LinkedList<Aluno> alunos;
     private Horario horario;
+    private Sala sala;
 
-    public Aula(String nome, int numero, Horario horario) {
-        this(nome, numero, horario, null, null);
+    public Aula(String nome, int numero, Horario horario, Sala sala) {
+        this(nome, numero, horario, null, null,sala);
     }
 
-    public Aula(String nome, int numero, Horario horario, Professor professor, LinkedList<Aluno> alunos) {
+    public Aula(String nome, int numero, Horario horario, Professor professor, LinkedList<Aluno> alunos, Sala sala) {
         super(nome, numero);
         this.professor = professor;
         this.alunos = alunos;
         this.horario = horario;
+        this.sala=sala;
         sumario = "";
         alunos = new LinkedList<>();
         for (Aluno aluno : alunos){
@@ -24,6 +26,16 @@ public class Aula extends Identificador {
         }
     }
 
+    public void setSala(Sala sala) {
+        if (this.sala == sala) {
+            return;
+        }
+        if (this.sala != null) {
+            this.sala.remover(this);
+        }
+        this.sala = sala;
+        this.sala.adicionar(this);
+    }
 
     public void setProfessor(Professor professor) {
         if (this.professor == professor) {
@@ -77,5 +89,13 @@ public class Aula extends Identificador {
 
     public Horario getHorario() {
         return horario;
+    }
+
+    public void desassociarSala() {
+        if (sala != null) {
+            Sala saux= sala;
+            sala = null;
+            saux.remover(this);
+        }
     }
 }

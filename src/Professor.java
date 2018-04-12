@@ -1,7 +1,13 @@
+import java.util.LinkedList;
+
 public class Professor extends Pessoa {
 
-    public Professor(String nome, long numero) {
+    private GabineteProfessor gabinete;
+    private LinkedList<Horario>horarios;
+
+    public Professor(String nome, long numero, GabineteProfessor gabinete) {
         super(nome, numero);
+        this.gabinete = gabinete;
     }
 
     @Override

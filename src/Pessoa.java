@@ -32,6 +32,9 @@ public abstract class Pessoa extends Identificador {
         }
         aulas.add(aula);
     }
+    public void adicionar(Horario horario) {
+
+    }
 
     public void remover(Aula aula) {
         if (aulas.contains(aula)) {
