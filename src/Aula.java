@@ -9,18 +9,19 @@ public class Aula extends Identificador {
     private Horario horario;
 
     public Aula(String nome, int numero, Horario horario) {
-        super(nome, numero);
-        this.horario = horario;
-        this.alunos = new LinkedList<>();
-        sumario = "";
+        this(nome, numero, horario, null, null);
     }
 
     public Aula(String nome, int numero, Horario horario, Professor professor, LinkedList<Aluno> alunos) {
-        super(nome,numero);
+        super(nome, numero);
         this.professor = professor;
         this.alunos = alunos;
         this.horario = horario;
         sumario = "";
+        alunos = new LinkedList<>();
+        for (Aluno aluno : alunos){
+            this.alunos.add(aluno);
+        }
     }
 
 
@@ -44,7 +45,7 @@ public class Aula extends Identificador {
     }
 
     public void remover(Aluno aluno) {
-        if(aluno==null){
+        if (aluno == null) {
             return;
         }
         alunos.remove(aluno);
@@ -55,13 +56,6 @@ public class Aula extends Identificador {
         return sumario;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setNumero(long numero) {
-        this.numero = numero;
-    }
 
     public void desassociarProfessor() {
         if (professor != null) {

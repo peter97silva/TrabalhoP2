@@ -3,7 +3,7 @@ public class Identificador {
     protected long numero;
 
     public Identificador(String nome, long numero) {
-        this.nome=nome;
+        this.nome = nome;
         this.numero = numero;
     }
 
@@ -13,5 +13,9 @@ public class Identificador {
 
     public long getNumero() {
         return numero;
+    }
+
+    public void setNumero(long numero) {
+        this.numero = numero;
     }
 }

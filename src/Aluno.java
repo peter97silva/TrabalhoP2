@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 public class Aluno extends Pessoa {
 
 
@@ -11,7 +9,7 @@ public class Aluno extends Pessoa {
     public void preencherSumario(Aula aula) {
         if (aulas.contains(aula)) {
             aula.adicionarLinhaSumario(nome);
-        }else{
+        } else {
             return;
         }
     }

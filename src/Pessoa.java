@@ -13,7 +13,6 @@ public abstract class Pessoa extends Identificador {
     }
 
     public LinkedList<Aula> getAulas(Horario horario) {
-
         LinkedList<Aula> aulasHorario = new LinkedList<>();
         for (Aula aula : aulas) {
             if (aula.getHorario().isSobreposto(horario)) {
@@ -23,15 +22,12 @@ public abstract class Pessoa extends Identificador {
         return aulasHorario;
     }
 
-    public void setNumero(long numero) {
-        this.numero = numero;
-    }
 
-    public abstract void preencherSumario(Aula aula) ;
+    public abstract void preencherSumario(Aula aula);
 
 
     public void adicionar(Aula aula) {
-        if(aula == null || aulas.contains(aula)){
+        if (aula == null || aulas.contains(aula)) {
             return;
         }
         aulas.add(aula);
@@ -40,6 +36,7 @@ public abstract class Pessoa extends Identificador {
     public void remover(Aula aula) {
         if (aulas.contains(aula)) {
             aulas.remove(aula);
+            aula.desassociarProfessor();
         }
     }
 }
