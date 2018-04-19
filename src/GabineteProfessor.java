@@ -23,6 +23,7 @@ public class GabineteProfessor {
         this.estadoPorta = estadoPorta;
     }
 
+
     public LinkedList<Professor> getProfessors() {
         return professores;
     }
@@ -32,13 +33,20 @@ public class GabineteProfessor {
             return;
         }
         professores.add(professor);
-        //professor.adicionar(null);
     }
     public void remover(Professor professor) {
         if (professor == null) {
             return;
         }
         professores.remove(professor);
-        professor.remover(null);
+       // professor.remover(null);
+    }
+    public void abrir(){
+        this.estadoPorta=true;
+
+    }
+
+    public void fechar(){
+        estadoPorta=false;
     }
 }

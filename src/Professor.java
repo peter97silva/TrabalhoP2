@@ -10,6 +10,14 @@ public class Professor extends Pessoa {
         this.gabinete = gabinete;
     }
 
+    public GabineteProfessor getGabinete() {
+        return gabinete;
+    }
+
+    public LinkedList<Horario> getHorarios() {
+        return horarios;
+    }
+
     @Override
     public void preencherSumario(Aula aula) {
         if (!aulas.contains(aula)) {
@@ -21,6 +29,36 @@ public class Professor extends Pessoa {
         for (Aluno aluno : aula.getAlunos()) {
             aluno.preencherSumario(aula);
         }
+    }
+
+    public void abrirGabinete() {
+    }
+
+    public void fecharGabinete() {
+    }
+
+    public void abrir(Sala sala) {
+    }
+
+    public void fechar(Sala sala) {
+
+    }
+
+    public void atribuir(GabineteProfessor gabinete){
+
+    }
+
+    public void desassociar(GabineteProfessor gabinete){
+
+
+    }
+
+    public void adicionar(Horario horario){
+
+    }
+
+    public void remover(Horario horario){
+
     }
 }
 

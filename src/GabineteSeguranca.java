@@ -41,4 +41,13 @@ public class GabineteSeguranca {
         segurancas.remove(seguranca);
         seguranca.remover(null);
     }
+
+    public void abrir(){
+
+    }
+
+    public void fecahr(){
+
+    }
+
 }

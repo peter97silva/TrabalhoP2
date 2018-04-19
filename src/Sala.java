@@ -54,6 +54,15 @@ public class Sala {
             aula.desassociarProfessor();
         }
     }
+    public void abrir(){
+
+    }
+
+    public void fechar(){
+
+    }
+
+
 }
 
 

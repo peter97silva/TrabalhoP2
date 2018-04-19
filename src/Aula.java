@@ -98,4 +98,7 @@ public class Aula extends Identificador {
             saux.remover(this);
         }
     }
+    public Sala getSala() {
+        return sala;
+    }
 }

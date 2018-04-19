@@ -42,4 +42,5 @@ public abstract class Pessoa extends Identificador {
             aula.desassociarProfessor();
         }
     }
+
 }
