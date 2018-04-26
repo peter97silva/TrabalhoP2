@@ -3,7 +3,6 @@ import java.util.LinkedList;
 public class GabineteProfessor extends Divisao{
     private String nome;
     private LinkedList<Professor> professores;
-    private boolean aberta;
 
     public GabineteProfessor(String nome, boolean aberta) {
         super(nome,aberta);
@@ -35,13 +34,5 @@ public class GabineteProfessor extends Divisao{
         }
         professores.remove(professor);
        // professor.remover(null);
-    }
-    public void abrir(){
-        this.aberta = true;
-
-    }
-
-    public void fechar(){
-        this.aberta = false;
     }
 }

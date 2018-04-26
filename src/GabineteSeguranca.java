@@ -4,7 +4,6 @@ import java.util.LinkedList;
 
 public class GabineteSeguranca extends Divisao {
     private String nome;
-    private boolean estadoPorta;
     private LinkedList<Seguranca> segurancas;
 
 
@@ -14,14 +13,6 @@ public class GabineteSeguranca extends Divisao {
 
     public String getNome() {
         return nome;
-    }
-
-    public boolean isEstadoPorta() {
-        return estadoPorta;
-    }
-
-    public void setEstadoPorta(boolean estadoPorta) {
-        this.estadoPorta = estadoPorta;
     }
 
     public LinkedList<Seguranca> getSegurancas() {
@@ -43,12 +34,5 @@ public class GabineteSeguranca extends Divisao {
         seguranca.remover(null);
     }
 
-    public void abrir(){
-
-    }
-
-    public void fecahr(){
-
-    }
 
 }
