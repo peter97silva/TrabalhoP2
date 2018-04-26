@@ -3,16 +3,11 @@ import com.sun.management.DiagnosticCommandMBean;
 import java.util.LinkedList;
 
 public class GabineteSeguranca extends Divisao {
-    private String nome;
     private LinkedList<Seguranca> segurancas;
 
 
     public GabineteSeguranca(String nome, boolean estadoPorta) {
         super(nome, estadoPorta);
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     public LinkedList<Seguranca> getSegurancas() {
