@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Sala extends Divisao{
+public class Sala extends Divisao implements RepositorioAulas{
     private LinkedList<Aula> aulasLecionadas;
 
     public Sala(String nome, boolean aberta) {
@@ -42,6 +42,12 @@ public class Sala extends Divisao{
         }
     }
 
+
+
+    @Override
+    public LinkedList<Aula> getAulas() {
+        return null;
+    }
 }
 
 
