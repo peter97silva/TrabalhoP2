@@ -101,4 +101,5 @@ public class Aula extends Identificador {
     public Sala getSala() {
         return sala;
     }
+
 }

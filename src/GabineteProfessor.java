@@ -3,24 +3,20 @@ import java.util.LinkedList;
 public class GabineteProfessor {
     private String nome;
     private LinkedList<Professor> professores;
-    private boolean estadoPorta;
+    private boolean aberta;
 
-    public GabineteProfessor(String nome, boolean estadoPorta) {
+    public GabineteProfessor(String nome, boolean aberta) {
         this.nome = nome;
-        this.estadoPorta = estadoPorta;
+        this.aberta = aberta;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public boolean isEstadoPorta() {
+    public boolean isAberta() {
 
-        return estadoPorta;
-    }
-
-    public void setEstadoPorta(boolean estadoPorta) {
-        this.estadoPorta = estadoPorta;
+        return aberta;
     }
 
 
@@ -42,11 +38,11 @@ public class GabineteProfessor {
        // professor.remover(null);
     }
     public void abrir(){
-        this.estadoPorta=true;
+        this.aberta = true;
 
     }
 
     public void fechar(){
-        estadoPorta=false;
+        this.aberta = false;
     }
 }

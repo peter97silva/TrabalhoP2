@@ -1,18 +1,11 @@
 import java.util.LinkedList;
 
-public class Sala {
-    private String nome;
+public class Sala extends Divisao{
     private LinkedList<Aula> aulasLecionadas;
-    private boolean estado;
 
-    public Sala(String nome, boolean estado) {
-        this.nome = nome;
-        this.estado = estado;
+    public Sala(String nome, boolean aberta) {
+        super(nome,aberta);
         aulasLecionadas = new LinkedList<>();
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     public LinkedList<Aula> getAulasLecionadas() {
@@ -33,13 +26,7 @@ public class Sala {
         this.aulasLecionadas = aulasLecionadas;
     }
 
-    public boolean getEstado() {
-        return estado;
-    }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
 
     public void adicionar(Aula aula) {
         if (aula == null || aulasLecionadas.contains(aula)) {
@@ -55,7 +42,7 @@ public class Sala {
         }
     }
     public void abrir(){
-
+        this.aberta = true;
     }
 
     public void fechar(){

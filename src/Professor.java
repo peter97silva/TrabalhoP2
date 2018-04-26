@@ -3,7 +3,7 @@ import java.util.LinkedList;
 public class Professor extends Pessoa {
 
     private GabineteProfessor gabinete;
-    private LinkedList<Horario>horarios;
+    private LinkedList<Horario> horariosAtendimento;
 
     public Professor(String nome, long numero, GabineteProfessor gabinete) {
         super(nome, numero);
@@ -15,7 +15,7 @@ public class Professor extends Pessoa {
     }
 
     public LinkedList<Horario> getHorarios() {
-        return horarios;
+        return horariosAtendimento;
     }
 
     @Override
@@ -32,16 +32,29 @@ public class Professor extends Pessoa {
     }
 
     public void abrirGabinete() {
+       if(gabinete.isAberta()){
+           return;
+       }
+        gabinete.abrir();
     }
 
     public void fecharGabinete() {
+        if(gabinete.isAberta()){
+            gabinete.fechar();
+        }
     }
 
     public void abrir(Sala sala) {
+        if(sala.isAberta()){
+            return;
+        }
+        sala.abrir();
     }
 
     public void fechar(Sala sala) {
-
+        if(sala.isAberta()){
+            sala.fechar();
+        }
     }
 
     public void atribuir(GabineteProfessor gabinete){
