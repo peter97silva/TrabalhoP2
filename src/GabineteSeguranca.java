@@ -47,7 +47,7 @@ public class GabineteSeguranca extends Divisao {
 
     }
 
-    public void fecahr(){
+    public void fechar(){
 
     }
 

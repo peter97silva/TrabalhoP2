@@ -73,7 +73,11 @@ public class Seguranca extends Identificador {
     public void abrirGabinete() {
 
     }
-    public void fechar(){
-
+    public void fechar(GabineteProfessor gabineteProfessor) {
+        if(gabineteProfessor.isAberta()){
+            gabineteProfessor.fechar();
+        }
     }
+
+
 }

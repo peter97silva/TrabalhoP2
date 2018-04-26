@@ -16,15 +16,11 @@ public class Divisao extends Descritor {
     }
 
     public void abrir(){
-        if(aberta){
-            return;
-        }
         aberta = true;
     }
 
     public void fechar(){
-        if(aberta){
             aberta = false;
-        }
+
     }
 }
