@@ -7,11 +7,6 @@ public class GabineteProfessor extends Divisao{
         super(nome,aberta);
     }
 
-    public boolean isAberta() {
-
-        return aberta;
-    }
-
 
     public LinkedList<Professor> getProfessors() {
         return professores;

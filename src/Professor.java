@@ -44,16 +44,16 @@ public class Professor extends Pessoa {
         }
     }
 
-    public void abrir(Sala sala) {
-        if(sala.isAberta()){
+    public void abrir(Divisao divisao) {
+        if(divisao.isAberta()){
             return;
         }
-        sala.abrir();
+        divisao.abrir();
     }
 
-    public void fechar(Sala sala) {
-        if(sala.isAberta()){
-            sala.fechar();
+    public void fechar(Divisao divisao) {
+        if(divisao.isAberta()){
+            divisao.fechar();
         }
     }
 

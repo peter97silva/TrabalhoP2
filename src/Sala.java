@@ -41,14 +41,6 @@ public class Sala extends Divisao{
             aula.desassociarProfessor();
         }
     }
-    public void abrir(){
-        this.aberta = true;
-    }
-
-    public void fechar(){
-
-    }
-
 
 }
 

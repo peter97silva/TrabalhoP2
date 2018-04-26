@@ -34,48 +34,24 @@ public class Seguranca extends Identificador {
 
     }
 
-    public void abrir(Sala sala) {
-        if(sala.isAberta()){
-            return;
-        }
-        sala.abrir();
-    }
-
-    public void fechar(Sala sala) {
-        if(sala.isAberta()){
-            sala.fechar();
-        }
-    }
-
-    public void abrirDivisao(Divisao divisao){
+    public void abrir(Divisao divisao) {
         if(divisao.isAberta()){
             return;
         }
         divisao.abrir();
     }
 
-    public void fecharDivisao(Divisao divisao){
-        if(divisao.isAberta())
-        {
-            divisao.fechar();
+    public void abrirGabinete(){
+        if(gabineteSeguranca.isAberta()){
+            return;
         }
-    }
-
-    public void abrir(GabineteSeguranca gabinete){
-
-    }
-
-    public void fechar(GabineteSeguranca gabinete){
-
+        gabineteSeguranca.abrir();
     }
 
 
-    public void abrirGabinete() {
-
-    }
-    public void fechar(GabineteProfessor gabineteProfessor) {
-        if(gabineteProfessor.isAberta()){
-            gabineteProfessor.fechar();
+    public void fechar(Divisao divisao) {
+        if(divisao.isAberta()){
+            divisao.fechar();
         }
     }
 
