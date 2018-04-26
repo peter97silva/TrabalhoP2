@@ -58,7 +58,7 @@ public class Main {
         System.out.println(aula1.getSala().getNome());
 
         // Aplicação do Polimorfismo numa estrutura de dados
-        LinkedList<Descritor> descritores = new LinkedList<>();
+        LinkedList<Identificador> descritores = new LinkedList<>();
         descritores.add(gabineteProfessorA1);
         descritores.add(gabineteProfessorD1);
         descritores.add(gabineteSegurancaA);
@@ -80,7 +80,7 @@ public class Main {
         descritores.add(aula2);
         descritores.add(aula3);
 
-        for (Descritor descritor : descritores) {
+        for (Identificador descritor : descritores) {
             System.out.print("Nome: " + descritor.getNome() + " ");
 
             if (descritor instanceof Identificador) { // Verifica se o descritor é do tipo Identificador
@@ -91,7 +91,7 @@ public class Main {
             }
         }
 
-        // Exemplo de um cast sem verificação de Descritor para GabineteSeguranca
+        // Exemplo de um cast sem verificação de Identificador para GabineteSeguranca
         GabineteSeguranca gabineteSeguranca = (GabineteSeguranca) descritores.get(0);
         // Ocorre um problema, visto que na primeira posição da lista está um GabineteProfessor
     }

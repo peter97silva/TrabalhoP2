@@ -1,13 +1,12 @@
 import java.util.LinkedList;
 
-public class GabineteProfessor {
+public class GabineteProfessor extends Divisao{
     private String nome;
     private LinkedList<Professor> professores;
     private boolean aberta;
 
     public GabineteProfessor(String nome, boolean aberta) {
-        this.nome = nome;
-        this.aberta = aberta;
+        super(nome,aberta);
     }
 
     public String getNome() {

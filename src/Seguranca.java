@@ -54,10 +54,10 @@ public class Seguranca extends Identificador {
         divisao.abrir();
     }
 
-    public void fecharDivisao(GabineteProfessor gabinete){
-        if(gabinete.isAberta())
+    public void fecharDivisao(Divisao divisao){
+        if(divisao.isAberta())
         {
-            gabinete.fechar();
+            divisao.fechar();
         }
     }
 

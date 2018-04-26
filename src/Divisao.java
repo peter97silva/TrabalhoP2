@@ -1,9 +1,9 @@
-public class Divisao {
+public class Divisao extends Descritor {
     protected String nome;
     protected boolean aberta;
 
     public Divisao(String nome, boolean aberta) {
-        this.nome = nome;
+        super(nome);
         this.aberta = aberta;
     }
 
