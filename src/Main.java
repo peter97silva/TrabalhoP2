@@ -58,7 +58,7 @@ public class Main {
         System.out.println(aula1.getSala().getNome());
 
         // Aplicação do Polimorfismo numa estrutura de dados
-        LinkedList<Identificador> descritores = new LinkedList<>();
+        LinkedList<Descritor> descritores = new LinkedList<>();
         descritores.add(gabineteProfessorA1);
         descritores.add(gabineteProfessorD1);
         descritores.add(gabineteSegurancaA);
@@ -80,7 +80,7 @@ public class Main {
         descritores.add(aula2);
         descritores.add(aula3);
 
-        for (Identificador descritor : descritores) {
+        for (Descritor descritor : descritores) {
             System.out.print("Nome: " + descritor.getNome() + " ");
 
             if (descritor instanceof Identificador) { // Verifica se o descritor é do tipo Identificador
