@@ -17,7 +17,7 @@ public class Gabinete<TFuncionario extends Funcionario> extends Divisao {
             return;
         }
         funcionarios.add(funcionario);
-        funcionario.adicionar(null);
+        funcionario.associar(this);
     }
 
     public void remover(TFuncionario funcionario) {
@@ -25,6 +25,6 @@ public class Gabinete<TFuncionario extends Funcionario> extends Divisao {
             return;
         }
         funcionarios.remove(funcionario);
-        funcionario.remover(null);
+        funcionario.desassociar(this);
     }
 }

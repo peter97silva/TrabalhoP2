@@ -1,8 +1,6 @@
 import java.util.LinkedList;
 
 public class Aula extends Identificador {
-
-
     private String sumario;
     private Professor professor;
     private LinkedList<Aluno> alunos;
