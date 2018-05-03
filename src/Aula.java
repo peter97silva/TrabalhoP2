@@ -91,7 +91,10 @@ public class Aula extends Identificador {
     }
 
     public LinkedList<Aluno> getAlunos() {
-        return new LinkedList<>(alunos);
+        if(alunos != null){
+            return new LinkedList<>(alunos);
+        }
+        return null;
     }
 
     public Horario getHorario() {

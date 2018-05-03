@@ -1,17 +1,17 @@
-public class Seguranca extends Identificador {
-    private GabineteSeguranca gabineteSeguranca;
+public class Seguranca extends Identificador implements Funcionario{
+    private GabineteSeguranca gabinete;
     private Horario horario;
 
 
 
-    public Seguranca(String nome, long numero,GabineteSeguranca gabineteSeguranca) {
+    public Seguranca(String nome, long numero,GabineteSeguranca gabinete) {
         super(nome,numero);
-        this.gabineteSeguranca = gabineteSeguranca;
+        this.gabinete = gabinete;
     }
 
 
-    public GabineteSeguranca getGabineteSeguranca() {
-        return gabineteSeguranca;
+    public GabineteSeguranca getGabinete() {
+        return gabinete;
     }
 
     public Horario getHorario() {
@@ -34,6 +34,16 @@ public class Seguranca extends Identificador {
 
     }
 
+    @Override
+    public void abrir(GabineteProfessor gabinete) {
+
+    }
+
+    @Override
+    public void fechar(GabineteProfessor gabinete) {
+
+    }
+
     public void abrir(Divisao divisao) {
         if(divisao.isAberta()){
             return;
@@ -41,11 +51,18 @@ public class Seguranca extends Identificador {
         divisao.abrir();
     }
 
-    public void abrirGabinete(){
-        if(gabineteSeguranca.isAberta()){
+    public void abrir(GabineteSeguranca gabinete){
+        if(gabinete.isAberta()){
             return;
         }
-        gabineteSeguranca.abrir();
+        gabinete.abrir();
+    }
+
+    public void fechar(GabineteSeguranca gabinete){
+        if(gabinete.isAberta())
+        {
+            gabinete.fechar();
+        }
     }
 
 

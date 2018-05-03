@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Professor extends Pessoa {
+public class Professor extends Pessoa implements Funcionario {
 
     private GabineteProfessor gabinete;
     private LinkedList<Horario> horariosAtendimento;
@@ -31,19 +31,23 @@ public class Professor extends Pessoa {
         }
     }
 
-    public void abrirGabinete() {
-       if(gabinete.isAberta()){
-           return;
-       }
+
+    @Override
+    public void abrir(GabineteProfessor gabinete){
+        if(gabinete.isAberta()){
+            return;
+        }
         gabinete.abrir();
     }
 
-    public void fecharGabinete() {
+    @Override
+    public void fechar(GabineteProfessor gabinete) {
         if(gabinete.isAberta()){
             gabinete.fechar();
         }
     }
 
+    @Override
     public void abrir(Divisao divisao) {
         if(divisao.isAberta()){
             return;
@@ -51,6 +55,7 @@ public class Professor extends Pessoa {
         divisao.abrir();
     }
 
+    @Override
     public void fechar(Divisao divisao) {
         if(divisao.isAberta()){
             divisao.fechar();
@@ -66,10 +71,12 @@ public class Professor extends Pessoa {
 
     }
 
+    @Override
     public void adicionar(Horario horario){
 
     }
 
+    @Override
     public void remover(Horario horario){
 
     }

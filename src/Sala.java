@@ -1,20 +1,21 @@
 import java.util.LinkedList;
 
-public class Sala extends Divisao {
-    private LinkedList<Aula> aulasLecionadas;
+public class Sala extends Divisao implements RepositorioAulas {
+    private LinkedList<Aula> aulas;
 
     public Sala(String nome, boolean aberta) {
         super(nome,aberta);
-        aulasLecionadas = new LinkedList<>();
+        aulas = new LinkedList<>();
     }
 
-    public LinkedList<Aula> getAulasLecionadas() {
-        return aulasLecionadas;
+    @Override
+    public LinkedList<Aula> getAulas() {
+        return aulas;
     }
 
     public LinkedList<Aula> getAulas(Horario horario) {
         LinkedList<Aula> aulasHorario = new LinkedList<>();
-        for (Aula aula : aulasLecionadas) {
+        for (Aula aula : aulas) {
             if (aula.getHorario().isSobreposto(horario)) {
                 aulasHorario.add(aula);
             }
@@ -22,22 +23,24 @@ public class Sala extends Divisao {
         return aulasHorario;
     }
 
-    public void setAulasLecionadas(LinkedList<Aula> aulasLecionadas) {
-        this.aulasLecionadas = aulasLecionadas;
+    public void setAulas(LinkedList<Aula> aulas) {
+        this.aulas = aulas;
     }
 
 
 
+    @Override
     public void adicionar(Aula aula) {
-        if (aula == null || aulasLecionadas.contains(aula)) {
+        if (aula == null || aulas.contains(aula)) {
             return;
         }
-        aulasLecionadas.add(aula);
+        aulas.add(aula);
     }
 
+    @Override
     public void remover(Aula aula) {
-        if (aulasLecionadas.contains(aula)) {
-            aulasLecionadas.remove(aula);
+        if (aulas.contains(aula)) {
+            aulas.remove(aula);
             aula.desassociarProfessor();
         }
     }
