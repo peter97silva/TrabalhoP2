@@ -62,15 +62,6 @@ public class Professor extends Pessoa implements Funcionario {
         }
     }
 
-    public void atribuir(GabineteProfessor gabinete){
-
-    }
-
-    public void desassociar(GabineteProfessor gabinete){
-
-
-    }
-
     @Override
     public void adicionar(Horario horario){
 

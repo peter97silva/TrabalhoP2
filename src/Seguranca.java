@@ -26,14 +26,6 @@ public class Seguranca extends Identificador implements Funcionario{
 
     }
 
-    public void atribuir(GabineteSeguranca gabineteSeguranca){
-
-    }
-
-    public void desassociar(GabineteSeguranca gabineteSeguranca){
-
-    }
-
     @Override
     public void abrir(GabineteProfessor gabinete) {
 
@@ -49,20 +41,6 @@ public class Seguranca extends Identificador implements Funcionario{
             return;
         }
         divisao.abrir();
-    }
-
-    public void abrir(GabineteSeguranca gabinete){
-        if(gabinete.isAberta()){
-            return;
-        }
-        gabinete.abrir();
-    }
-
-    public void fechar(GabineteSeguranca gabinete){
-        if(gabinete.isAberta())
-        {
-            gabinete.fechar();
-        }
     }
 
 
