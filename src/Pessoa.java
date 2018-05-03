@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public abstract class Pessoa extends Identificador implements RepositorioAulas {
+public abstract class Pessoa extends Identificador {
     protected LinkedList<Aula> aulas;
 
     public Pessoa(String nome, long numero) {
