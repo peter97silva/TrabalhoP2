@@ -15,9 +15,6 @@ public class Professor extends Pessoa implements Funcionario<GabineteProfessor, 
         return gabinete;
     }
 
-    public LinkedList<Horario> getHorarios() {
-        return horariosAtendimento;
-    }
 
     @Override
     public void preencherSumario(Aula aula) {
@@ -98,6 +95,11 @@ public class Professor extends Pessoa implements Funcionario<GabineteProfessor, 
         Gabinete<Professor> gabineteAux = gabinete;
         this.gabinete = null;
         gabineteAux.remover(this);
+    }
+
+    @Override
+    public LinkedList<Horario> getHorario() {
+        return new LinkedList<>(horariosAtendimento);
     }
 }
 

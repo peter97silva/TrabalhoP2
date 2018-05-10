@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public interface Funcionario<TGabinete extends  Gabinete, TDivisao extends Divisao> {
     void abrir(TDivisao gabinete);
 
@@ -14,4 +16,6 @@ public interface Funcionario<TGabinete extends  Gabinete, TDivisao extends Divis
     void associar(Gabinete gabinete);
 
     void desassociar(Gabinete gabinete);
+
+    LinkedList<Horario> getHorario();
 }

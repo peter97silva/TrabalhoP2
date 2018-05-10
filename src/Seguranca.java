@@ -1,6 +1,8 @@
+import java.util.LinkedList;
+
 public class Seguranca extends Identificador implements Funcionario{
     private GabineteSeguranca gabinete;
-    private Horario horario;
+    private LinkedList<Horario> horarios;
 
 
 
@@ -14,16 +16,20 @@ public class Seguranca extends Identificador implements Funcionario{
         return gabinete;
     }
 
-    public Horario getHorario() {
-        return horario;
+    public LinkedList<Horario> getHorario() {
+        return new LinkedList<>(horarios);
     }
 
     public void adicionar(Horario horario) {
-
+        if(horario != null){
+            horarios.add(horario);
+        }
     }
 
     public void remover(Horario horario) {
-
+        if(horarios.contains(horario)){
+            horarios.remove(horario);
+        }
     }
 
     @Override
