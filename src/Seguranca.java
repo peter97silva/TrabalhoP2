@@ -37,16 +37,24 @@ public class Seguranca extends Identificador implements Funcionario{
     }
 
 
-    @Override
-    public void abrir(Gabinete gabinete) {
 
+    @Override
+    public void abrir() {
+        if(this.gabinete.isAberta()){
+            return;
+        }
+        gabinete.abrir();
     }
 
     @Override
-    public void fechar(Gabinete gabinete) {
-
+    public void fechar() {
+        if(this.gabinete.isAberta()){
+            return;
+        }
+        gabinete.fechar();
     }
 
+    @Override
     public void abrir(Divisao divisao) {
         if(divisao.isAberta()){
             return;
@@ -54,7 +62,7 @@ public class Seguranca extends Identificador implements Funcionario{
         divisao.abrir();
     }
 
-
+    @Override
     public void fechar(Divisao divisao) {
         if(divisao.isAberta()){
             divisao.fechar();

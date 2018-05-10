@@ -1,16 +1,17 @@
 import java.util.LinkedList;
 
-public class Professor extends Pessoa implements Funcionario {
+public class Professor extends Pessoa implements Funcionario<GabineteProfessor, Sala> {
 
-    private GabineteProfessor gabinete;
+    private Gabinete<Professor> gabinete;
     private LinkedList<Horario> horariosAtendimento;
 
     public Professor(String nome, long numero, GabineteProfessor gabinete) {
         super(nome, numero);
         this.gabinete = gabinete;
+        horariosAtendimento = new LinkedList<>();
     }
 
-    public GabineteProfessor getGabinete() {
+    public Gabinete<Professor> getGabinete() {
         return gabinete;
     }
 
@@ -33,48 +34,70 @@ public class Professor extends Pessoa implements Funcionario {
 
 
     @Override
-    public void abrir(Gabinete gabinete) {
-
-    }
-
-    @Override
-    public void fechar(Gabinete gabinete) {
-
-    }
-
-    @Override
-    public void abrir(Divisao divisao) {
-        if(divisao.isAberta()){
+    public void abrir(Sala divisao) {
+        if(divisao == null){
             return;
         }
         divisao.abrir();
     }
 
     @Override
-    public void fechar(Divisao divisao) {
-        if(divisao.isAberta()){
-            divisao.fechar();
+    public void fechar(Sala divisao) {
+        if(divisao == null){
+            return;
         }
+        divisao.fechar();
+    }
+
+    @Override
+    public void abrir() {
+        if(this.gabinete.isAberta()){
+            return;
+        }
+        gabinete.abrir();
+    }
+
+    @Override
+    public void fechar() {
+        if(this.gabinete.isAberta()){
+            return;
+        }
+        gabinete.fechar();
     }
 
     @Override
     public void adicionar(Horario horario){
-
+        if(horario == null){
+            return;
+        }
+        horariosAtendimento.add(horario);
     }
 
     @Override
     public void remover(Horario horario){
-
+        if(horario == null || !horariosAtendimento.contains(horario)){
+            return;
+        }
+        horariosAtendimento.remove(horario);
     }
 
     @Override
-    public void associar(Gabinete gabinete) {
-
+    public void associar(Gabinete gabineteRecebido) {
+        if(gabineteRecebido != null)
+        {
+            gabinete.adicionar(this);
+            this.gabinete = gabineteRecebido;
+        }
     }
 
     @Override
     public void desassociar(Gabinete gabinete) {
-
+        if(gabinete == null){
+            return;
+        }
+        Gabinete<Professor> gabineteAux = gabinete;
+        this.gabinete = null;
+        gabineteAux.remover(this);
     }
 }
 

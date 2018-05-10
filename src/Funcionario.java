@@ -1,11 +1,11 @@
 public interface Funcionario<TGabinete extends  Gabinete, TDivisao extends Divisao> {
-    void abrir(TGabinete gabinete);
+    void abrir(TDivisao gabinete);
 
-    void fechar(TGabinete gabinete);
+    void fechar(TDivisao gabinete);
 
-    void abrir(TDivisao divisao);
+    void abrir();
 
-    void fechar(TDivisao divisao);
+    void fechar();
 
     void adicionar(Horario horario);
 
