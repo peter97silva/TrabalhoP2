@@ -33,18 +33,13 @@ public class Professor extends Pessoa implements Funcionario {
 
 
     @Override
-    public void abrir(GabineteProfessor gabinete){
-        if(gabinete.isAberta()){
-            return;
-        }
-        gabinete.abrir();
+    public void abrir(Gabinete gabinete) {
+
     }
 
     @Override
-    public void fechar(GabineteProfessor gabinete) {
-        if(gabinete.isAberta()){
-            gabinete.fechar();
-        }
+    public void fechar(Gabinete gabinete) {
+
     }
 
     @Override
@@ -69,6 +64,16 @@ public class Professor extends Pessoa implements Funcionario {
 
     @Override
     public void remover(Horario horario){
+
+    }
+
+    @Override
+    public void associar(Gabinete gabinete) {
+
+    }
+
+    @Override
+    public void desassociar(Gabinete gabinete) {
 
     }
 }

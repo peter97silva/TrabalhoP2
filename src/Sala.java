@@ -1,11 +1,9 @@
 import java.util.LinkedList;
 
-public class Sala extends Divisao implements RepositorioAulas {
-    private LinkedList<Aula> aulas;
+public class Sala extends gestorAulasSala implements RepositorioAulas {
 
     public Sala(String nome, boolean aberta) {
         super(nome,aberta);
-        aulas = new LinkedList<>();
     }
 
     @Override
@@ -25,24 +23,6 @@ public class Sala extends Divisao implements RepositorioAulas {
 
     public void setAulas(LinkedList<Aula> aulas) {
         this.aulas = aulas;
-    }
-
-
-
-    @Override
-    public void adicionar(Aula aula) {
-        if (aula == null || aulas.contains(aula)) {
-            return;
-        }
-        aulas.add(aula);
-    }
-
-    @Override
-    public void remover(Aula aula) {
-        if (aulas.contains(aula)) {
-            aulas.remove(aula);
-            aula.desassociarProfessor();
-        }
     }
 
 

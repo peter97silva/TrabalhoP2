@@ -27,12 +27,23 @@ public class Seguranca extends Identificador implements Funcionario{
     }
 
     @Override
-    public void abrir(GabineteProfessor gabinete) {
+    public void associar(Gabinete gabinete) {
 
     }
 
     @Override
-    public void fechar(GabineteProfessor gabinete) {
+    public void desassociar(Gabinete gabinete) {
+
+    }
+
+
+    @Override
+    public void abrir(Gabinete gabinete) {
+
+    }
+
+    @Override
+    public void fechar(Gabinete gabinete) {
 
     }
 
