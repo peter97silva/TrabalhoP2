@@ -1,11 +1,11 @@
 import java.util.LinkedList;
 
-public class gestorAulasPessoa extends Identificador {
+public class GestorAulasSala extends Divisao {
     protected LinkedList<Aula> aulas;
 
-    public gestorAulasPessoa(String nome, long numero) {
-        super(nome, numero);
-        this.aulas = new LinkedList<>();
+    public GestorAulasSala(String nome, boolean aberta) {
+        super(nome, aberta);
+        aulas = new LinkedList<>();
     }
 
     public void adicionar(Aula aula) {

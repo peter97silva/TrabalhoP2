@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Sala extends gestorAulasSala implements RepositorioAulas {
+public class Sala extends GestorAulasSala implements RepositorioAulas {
 
     public Sala(String nome, boolean aberta) {
         super(nome,aberta);

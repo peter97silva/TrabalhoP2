@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public abstract class Pessoa extends gestorAulasPessoa {
+public abstract class Pessoa extends GestorAulasPessoa {
 
     public Pessoa(String nome, long numero) {
         super(nome, numero);
