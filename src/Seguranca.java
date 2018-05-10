@@ -9,6 +9,7 @@ public class Seguranca extends Identificador implements Funcionario{
     public Seguranca(String nome, long numero,GabineteSeguranca gabinete) {
         super(nome,numero);
         this.gabinete = gabinete;
+        horarios = new LinkedList<>();
     }
 
 
