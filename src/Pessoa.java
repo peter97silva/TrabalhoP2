@@ -1,9 +1,12 @@
 import java.util.LinkedList;
 
-public abstract class Pessoa extends GestorAulasPessoa {
+public abstract class Pessoa extends Identificador {
+
+    protected LinkedList<Aula> aulas;
 
     public Pessoa(String nome, long numero) {
         super(nome, numero);
+        aulas = new LinkedList<>();
     }
 
     public LinkedList<Aula> getAulas() {
@@ -28,5 +31,18 @@ public abstract class Pessoa extends GestorAulasPessoa {
 
     }
 
+    public void adicionar(Aula aula) {
+        if(aula == null || aulas.contains(aula)){
+            return;
+        }
+        aulas.add(aula);
+    }
+
+    public void remover(Aula aula) {
+        if(!aulas.contains(aula)) {
+            return;
+        }
+        aulas.remove(aula);
+    }
 
 }
